@@ -1,0 +1,234 @@
+/* ----------CSS Reset---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  color: white;
+  font-weight: bold;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* --------------styles-------------------- */
+
+/* backgroundclr : #172a21 */
+/* color2 :#334f48 */
+/* colortext : #dbf2ef */
+.date_time,
+.weathercode,
+.cityname {
+  display: flex;
+  justify-content: flex-end;
+}
+.search,
+.current_temp,
+.current_wind {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  height: 100dvh;
+  background-color: #172a21;
+  border: 10px solid #0b1611;
+}
+.main_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 71%;
+  padding: 2em;
+}
+.date_time {
+  gap: 10px;
+}
+.time {
+  padding-left: 7px;
+  border-left: 2px solid #334f48;
+}
+.weathercode {
+  font-size: 80px;
+}
+.hrforecast {
+  display: flex;
+  overflow-y: scroll;
+  gap: 7px;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  border-top: 2px solid #334f48;
+}
+.hrforecast > * {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 5px;
+  backdrop-filter: blur(0px) saturate(120%);
+  -webkit-backdrop-filter: blur(0px) saturate(120%);
+  background-color: rgba(51, 79, 72, 0.4);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+.hr_time {
+  border-bottom: 2px solid #334f48;
+}
+.main_right {
+  padding: 1.5em;
+  flex-grow: 1;
+  backdrop-filter: blur(0px) saturate(120%);
+  -webkit-backdrop-filter: blur(0px) saturate(120%);
+  background-color: rgba(51, 79, 72, 0.4);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+.search_container {
+  display: flex;
+  justify-content: center;
+}
+.search {
+  background: url(/src/assets/location.webp) no-repeat scroll 1px 1px;
+  background-color: transparent;
+  border: 2px solid #334f48;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 5px 5px 32px;
+}
+.current_temp {
+  font-size: 70px;
+}
+.windicon {
+  width: 1.3rem;
+  height: 1.2rem;
+}
+.current_wind {
+  padding: 1.5rem 0 1.5rem 0;
+  border-bottom: 2px solid #334f48;
+}
+.days_container {
+  display: flex;
+  justify-content: space-around;
+}
+.days_container > * {
+  width: 90px;
+  padding: 0.2em;
+  border-style: none;
+}
+.dyforecast {
+  padding-top: 1rem;
+}
+.dyforecast_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 15px 0;
+  white-space: nowrap;
+}
+.dyforecast_container > * {
+  padding: 0 3px 0 3px;
+}
+.dyforecast_container > img {
+  background-color: #334f48;
+  border-radius: 5px;
+}
+
+.dyforecast_innercontainer {
+  flex-grow: 1;
+}
+.dyforecast_innercontainer1 {
+  border-left: 2px solid #334f48;
+}
+
+/* export default function dailyforecast(value) {
+  const container = document.getElementById("dy_container");
+
+  while (container.lastChild) {
+    container.removeChild(container.lastChild);
+  }
+
+  for (let i = 0; i <= value.length; i++) {
+    console.log(typeof value);
+
+    const outercontainer = document.createElement("div");
+    outercontainer.classList.add("dyforecast_container");
+
+    // image
+
+    const img = document.createElement("img");
+    img.setAttribute("src", value[i].day.condition.icon);
+    img.classList.add("dy_img");
+    outercontainer.appendChild(img);
+
+    // conatiner with date and condition
+    const innercontainer = document.createElement("div");
+    innercontainer.classList.add("dyforecast_innercontainer");
+
+    const date = document.createElement("div");
+    date.classList.add("dy_date");
+    date.innerText = value[i].date;
+    innercontainer.appendChild(date);
+
+    const condition = document.createElement("div");
+    condition.classList.add("dy_condition");
+    condition.innerText = value[i].day.condition.text;
+    innercontainer.appendChild(condition);
+
+    outercontainer.appendChild(innercontainer);
+
+    // container with mintemp and maxtemp
+    const innercontainer1 = document.createElement("div");
+    innercontainer1.classList.add("dyforecast_innercontainer1");
+
+    const mintemp = document.createElement("div");
+    mintemp.classList.add("dy_mintemp");
+    mintemp.innerText = value[i].day.mintemp_c + "°C";
+    mintemp.setAttribute("title", "minimum temperature");
+    innercontainer1.appendChild(mintemp);
+
+    const maxtemp = document.createElement("div");
+    maxtemp.classList.add("dy_maxtemp");
+    maxtemp.innerText = value[i].day.maxtemp_c + "°C";
+    maxtemp.setAttribute("title", "maximum temperature");
+    innercontainer1.appendChild(maxtemp);
+
+    outercontainer.appendChild(innercontainer1);
+
+    container.appendChild(outercontainer);
+  }
+} */

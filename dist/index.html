@@ -4,7 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="main.js"></script>
     <title>WeatherApp</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <section class="main_left">
+        <div class="date_time">
+          <div class="date" id="date">00-00-0000</div>
+          <div class="time" id="time">00:00</div>
+        </div>
+        <div class="mainforecast">
+          <h1 class="cityname" id="place">Location</h1>
+          <div class="weathercode" id="condition">Condition</div>
+          <div class="hrforecast" id="hrforecast"></div>
+        </div>
+      </section>
+      <section class="main_right">
+        <div class="search_container">
+          <input id="search" class="search" type="search" />
+        </div>
+        <div class="temp">
+          <div class="current_temp" id="temperature">00°C</div>
+        </div>
+        <div class="current_wind">
+          <img class="windicon" src="../src/assets/windicon.webp" />
+          <div id="wind">Wind Speed</div>
+        </div>
+        <div class="dyforecast">
+          <h1>The Next Days Forecast</h1>
+          <div class="dy_container" id="dy_container"></div>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
