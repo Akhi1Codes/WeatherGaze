@@ -120,6 +120,7 @@ h6 {
 }
 .search_container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 .search {
@@ -129,6 +130,11 @@ h6 {
   border-radius: 5px;
   color: white;
   padding: 5px 5px 5px 32px;
+}
+.error {
+  text-align: center;
+  color: red;
+  display: none;
 }
 .current_temp {
   font-size: 70px;
@@ -174,61 +180,3 @@ h6 {
 .dyforecast_innercontainer1 {
   border-left: 2px solid #334f48;
 }
-
-/* export default function dailyforecast(value) {
-  const container = document.getElementById("dy_container");
-
-  while (container.lastChild) {
-    container.removeChild(container.lastChild);
-  }
-
-  for (let i = 0; i <= value.length; i++) {
-    console.log(typeof value);
-
-    const outercontainer = document.createElement("div");
-    outercontainer.classList.add("dyforecast_container");
-
-    // image
-
-    const img = document.createElement("img");
-    img.setAttribute("src", value[i].day.condition.icon);
-    img.classList.add("dy_img");
-    outercontainer.appendChild(img);
-
-    // conatiner with date and condition
-    const innercontainer = document.createElement("div");
-    innercontainer.classList.add("dyforecast_innercontainer");
-
-    const date = document.createElement("div");
-    date.classList.add("dy_date");
-    date.innerText = value[i].date;
-    innercontainer.appendChild(date);
-
-    const condition = document.createElement("div");
-    condition.classList.add("dy_condition");
-    condition.innerText = value[i].day.condition.text;
-    innercontainer.appendChild(condition);
-
-    outercontainer.appendChild(innercontainer);
-
-    // container with mintemp and maxtemp
-    const innercontainer1 = document.createElement("div");
-    innercontainer1.classList.add("dyforecast_innercontainer1");
-
-    const mintemp = document.createElement("div");
-    mintemp.classList.add("dy_mintemp");
-    mintemp.innerText = value[i].day.mintemp_c + "°C";
-    mintemp.setAttribute("title", "minimum temperature");
-    innercontainer1.appendChild(mintemp);
-
-    const maxtemp = document.createElement("div");
-    maxtemp.classList.add("dy_maxtemp");
-    maxtemp.innerText = value[i].day.maxtemp_c + "°C";
-    maxtemp.setAttribute("title", "maximum temperature");
-    innercontainer1.appendChild(maxtemp);
-
-    outercontainer.appendChild(innercontainer1);
-
-    container.appendChild(outercontainer);
-  }
-} */

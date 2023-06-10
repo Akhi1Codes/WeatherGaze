@@ -7,7 +7,8 @@ async function getWeather(value) {
   try {
     const weather = await fetch(url, { mode: "cors" });
     const weatherData = await weather.json();
-    console.log(weatherData);
+    const error_text = document.getElementById("error");
+    error_text.style.display = "none";
     currweather(
       weatherData.location.name,
       weatherData.current.condition.text,
@@ -19,7 +20,11 @@ async function getWeather(value) {
     dailyforecast(weatherData.forecast.forecastday);
     hourlyforecast(weatherData.forecast.forecastday[0].hour);
   } catch (error) {
-    console.log(error);
+    if (error.message === "weatherData.location is undefined") {
+      console.log("entered if");
+      const error_text = document.getElementById("error");
+      error_text.style.display = "block";
+    }
   }
 }
 export default getWeather;
