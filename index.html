@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="main.js"></script>
+    <title>WeatherGaze</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="main_left">
+        <div class="date_time_location">
+          <div class="location">
+            <h1 class="cityname" id="place"></h1>
+            <h1 class="cityname" id="region"></h1>
+            <h1 class="cityname" id="country"></h1>
+          </div>
+          <div class="date_time">
+            <div class="date" id="date"></div>
+            <div class="time" id="time"></div>
+          </div>
+        </div>
+        <div class="mainforecast">
+          <div class="weathercode" id="condition"></div>
+          <div class="hrforecast" id="hrforecast"></div>
+        </div>
+      </section>
+      <section class="main_right">
+        <div class="search_container">
+          <input
+            id="search"
+            class="search"
+            type="search"
+            placeholder="Enter the location"
+          />
+          <p id="error" class="error">Error:Enter a valid location</p>
+        </div>
+        <div class="temp">
+          <div class="current_temp" id="temperature"></div>
+        </div>
+        <div class="current_wind">
+          <img class="windicon" src="../src/assets/windicon.webp" />
+          <div id="wind"></div>
+        </div>
+        <div class="dyforecast">
+          <h1>The Next Days Forecast</h1>
+          <div class="dy_container" id="dy_container"></div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
