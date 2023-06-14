@@ -1,6 +1,6 @@
 import day_time from "./dayandtime";
 
-export default function hourlyforecast(data) {
+export default function hourlyforecast(data, currenttime) {
   const container = document.getElementById("hrforecast");
 
   while (container.lastChild) {
@@ -13,6 +13,7 @@ export default function hourlyforecast(data) {
 
     const time = document.createElement("div");
     time.classList.add("hr_time");
+    let hourlytime = data[key].time;
     let [day, hrtime] = day_time(data[key].time);
     time.innerText = hrtime;
     innercontainer.appendChild(time);

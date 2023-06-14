@@ -5,18 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="main.js"></script>
-    <title>WeatherApp</title>
+    <title>WeatherGaze</title>
   </head>
   <body>
     <div class="container">
       <section class="main_left">
-        <div class="date_time">
-          <div class="date" id="date">00-00-0000</div>
-          <div class="time" id="time">00:00</div>
+        <div class="date_time_location">
+          <div class="location">
+            <h1 class="cityname" id="place"></h1>
+            <h1 class="cityname" id="region"></h1>
+            <h1 class="cityname" id="country"></h1>
+          </div>
+          <div class="date_time">
+            <div class="date" id="date"></div>
+            <div class="time" id="time"></div>
+          </div>
         </div>
         <div class="mainforecast">
-          <h1 class="cityname" id="place">Location</h1>
-          <div class="weathercode" id="condition">Condition</div>
+          <div class="weathercode" id="condition"></div>
           <div class="hrforecast" id="hrforecast"></div>
         </div>
       </section>
@@ -31,11 +37,11 @@
           <p id="error" class="error">Error:Enter a valid location</p>
         </div>
         <div class="temp">
-          <div class="current_temp" id="temperature">00°C</div>
+          <div class="current_temp" id="temperature"></div>
         </div>
         <div class="current_wind">
           <img class="windicon" src="../src/assets/windicon.webp" />
-          <div id="wind">Wind Speed</div>
+          <div id="wind"></div>
         </div>
         <div class="dyforecast">
           <h1>The Next Days Forecast</h1>

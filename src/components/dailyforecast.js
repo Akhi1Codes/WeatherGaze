@@ -38,18 +38,25 @@ export default function dailyforecast(value) {
 
     const mintemp = document.createElement("div");
     mintemp.classList.add("dy_mintemp");
-    mintemp.innerText = value[key].day.mintemp_c + "°C";
+    mintemp.innerText = decimalpoint(value[key].day.mintemp_c);
     mintemp.setAttribute("title", "minimum temperature");
     innercontainer1.appendChild(mintemp);
 
     const maxtemp = document.createElement("div");
     maxtemp.classList.add("dy_maxtemp");
-    maxtemp.innerText = value[key].day.maxtemp_c + "°C";
+    maxtemp.innerText = decimalpoint(value[key].day.maxtemp_c);
     maxtemp.setAttribute("title", "maximum temperature");
     innercontainer1.appendChild(maxtemp);
 
     outercontainer.appendChild(innercontainer1);
 
     container.appendChild(outercontainer);
+  }
+}
+function decimalpoint(value) {
+  if (value % 1 != 0) {
+    return value + "°C";
+  } else {
+    return value + ".0°C";
   }
 }
