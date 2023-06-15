@@ -2,11 +2,16 @@
   "name": "weather-web",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+    "url": "git+https://github.com/Ar-Akhil/WeatherGaze"
+  },
   "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +19,7 @@
   "devDependencies": {
     "css-loader": "^6.7.4",
     "dotenv-webpack": "^8.0.1",
+    "gh-pages": "^5.0.0",
     "style-loader": "^3.3.3",
     "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1"

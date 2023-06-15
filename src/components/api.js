@@ -3,7 +3,7 @@ import dailyforecast from "./dailyforecast.js";
 import hourlyforecast from "./hourlyforecast.js";
 
 async function getWeather(value) {
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.WEATHER_API_KEY}&q=${value}&days=3`;
+  const url = `https://api.weatherapi.com/v1/forecast.json?key=${process.env.WEATHER_API_KEY}&q=${value}&days=3`;
   try {
     const weather = await fetch(url, { mode: "cors" });
     const weatherData = await weather.json();
