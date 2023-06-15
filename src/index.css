@@ -215,10 +215,12 @@ body {
   .main_left {
     width: auto;
     padding: 0.5rem;
+    margin-top: 1.5rem;
   }
   .date_time_location {
     flex-direction: column-reverse;
     align-items: center;
+    gap: 2rem;
   }
   .weathercode {
     text-align: center;
@@ -231,6 +233,7 @@ body {
   .main_left {
     width: auto;
     padding: 0.5rem;
+    margin-top: 1.5rem;
   }
   .weathercode {
     text-align: center;
